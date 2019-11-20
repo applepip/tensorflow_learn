@@ -1,3 +1,6 @@
+'''
+Linear Regression with TensorFlow
+'''
 import numpy as np
 from sklearn.datasets import fetch_california_housing
 import tensorflow as tf
