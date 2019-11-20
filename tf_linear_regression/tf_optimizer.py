@@ -53,3 +53,24 @@ with tf.Session() as sess:
 print("Best theta:")
 print(best_theta)
 
+
+'''
+TensorFlow的MomentumOptimizer优化器
+'''
+optimizer = tf.train.MomentumOptimizer(learning_rate=learning_rate,
+                                       momentum=0.9)
+
+training_op = optimizer.minimize(mse)
+
+init = tf.global_variables_initializer()
+
+with tf.Session() as sess:
+    sess.run(init)
+
+    for epoch in range(n_epochs):
+        sess.run(training_op)
+
+    best_theta = theta.eval()
+
+print("Best theta:")
+print(best_theta)
